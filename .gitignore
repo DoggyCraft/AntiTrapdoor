@@ -1,0 +1,19 @@
+# Libs and stuff
+/bukkit
+/lib
+/jar
+
+# Eclipse Core
+/bin
+
+# JDT-specific (Eclipse Java Development Tools)
+.classpath
+.project
+/.settings/
+
+# Idea
+antitrapdoor.iml
+/.idea/
+
+# Maven build
+/target/

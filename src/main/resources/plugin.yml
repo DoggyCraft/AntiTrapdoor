@@ -1,0 +1,19 @@
+name: AntiTrapdoor
+main: dk.doggycraft.antitrapdoor.Trapdoors
+author: DoggyCraft
+version: ${project.version}
+api-version: 1.13
+load: POSTWORLD
+description: Don't touch our trapdoors
+depend: [WorldGuard]
+softdepend: [Vault]
+website: https://github.com/DoggyCraftDK/AntiTrapdoor
+permissions:
+    trapdoors.*:
+        description: Gives the Player access to control the spawn trapdoors
+        default: false
+        children:
+            trapdoors.use: true
+    trapdoors.use:
+        description: Allows the Player to use the trapdoors at spawn
+        default: false
