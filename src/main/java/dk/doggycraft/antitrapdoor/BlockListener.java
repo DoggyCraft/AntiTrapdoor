@@ -3,6 +3,7 @@ package dk.doggycraft.antitrapdoor;
 import com.sk89q.worldedit.bukkit.BukkitAdapter;
 import com.sk89q.worldguard.WorldGuard;
 import com.sk89q.worldguard.domains.DefaultDomain;
+import com.sk89q.worldguard.domains.GroupDomain;
 import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import com.sk89q.worldguard.protection.regions.ProtectedRegion;
 import com.sk89q.worldguard.protection.regions.RegionContainer;
@@ -15,8 +16,11 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
+import scala.Array;
 
+import java.util.Arrays;
 import java.util.Objects;
+import java.util.Set;
 
 public class BlockListener implements Listener
 {
@@ -84,7 +88,12 @@ public class BlockListener implements Listener
 				{
 					DefaultDomain members = region.getMembers();
 					DefaultDomain owners = region.getOwners();
-					if (!((player.isOp() || plugin.getPermissionsManager().hasPermission(player, "trapdoors.use")) && (members.contains(player.getUniqueId()) || owners.contains(player.getUniqueId()))))
+					Set<String> ownerGroups = owners.getGroups();
+					Set<String> memberGroups = members.getGroups();
+					String[] groups = new String[ownerGroups.size()+memberGroups.size()];
+					ownerGroups.toArray(groups);
+					memberGroups.toArray(groups);
+					if (!((player.isOp() || plugin.getPermissionsManager().hasPermission(player, "trapdoors.use")) && (members.contains(player.getUniqueId()) || owners.contains(player.getUniqueId()) || plugin.getPermissionsManager().inGroups(player, groups))))
 					{
 						event.setCancelled(true);
 					}

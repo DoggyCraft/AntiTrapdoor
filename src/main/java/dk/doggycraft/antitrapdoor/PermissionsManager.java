@@ -23,4 +23,14 @@ public class PermissionsManager
 		return vaultPermission.has(player, node);
 	}
 
+	public boolean inGroups(Player player, String[] groups) {
+		for (String group : groups)
+		{
+			if (vaultPermission.playerInGroup(player, group))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
 }
