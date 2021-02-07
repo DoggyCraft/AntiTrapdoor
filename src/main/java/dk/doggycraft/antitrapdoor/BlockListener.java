@@ -55,6 +55,24 @@ public class BlockListener implements Listener
 		}
 	}
 
+	// Wow, fence gates too? how rough..
+	private boolean isFenceGate(Block clickedBlock)
+    {
+        switch (clickedBlock.getType()) {
+            case ACACIA_FENCE_GATE:
+            case BIRCH_FENCE_GATE:
+            case CRIMSON_FENCE_GATE:
+            case DARK_OAK_FENCE_GATE:
+            case JUNGLE_FENCE_GATE:
+            case OAK_FENCE_GATE:
+            case SPRUCE_FENCE_GATE:
+            case WARPED_FENCE_GATE:
+                return true;
+            default:
+                return false;
+        }
+    }
+
 	@EventHandler
 	public void onPlayerInteract(PlayerInteractEvent event)
 	{
@@ -76,7 +94,7 @@ public class BlockListener implements Listener
 			return;
 		}
 
-		if (this.isTrapdoor(clickedBlock))
+		if (this.isTrapdoor(clickedBlock) || this.isFenceGate(clickedBlock))
 		{
 			Location blockLocation = clickedBlock.getLocation();
 			RegionQuery query = this.container.createQuery();
