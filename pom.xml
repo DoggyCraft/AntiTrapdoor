@@ -3,7 +3,7 @@
 
     <groupId>dk.DoggyCraft</groupId>
     <artifactId>antitrapdoor</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2</version>
     <name>AntiTrapdoor</name>
     <description>Don't touch the trapdoors.</description>
     <url>https://github.com/${github.repo}</url>
@@ -24,7 +24,8 @@
         <url>git@github.com:${github.repo}.git</url>
         <connection>scm:git:${project.scm.url}</connection>
         <developerConnection>scm:git:${project.scm.url}</developerConnection>
-    </scm>
+      <tag>v0.0.2</tag>
+  </scm>
 
     <repositories>
         <!-- Spigot Repo for Spigot and Bukkit -->
