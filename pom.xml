@@ -3,7 +3,7 @@
 
     <groupId>dk.DoggyCraft</groupId>
     <artifactId>antitrapdoor</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.2</version>
     <name>AntiTrapdoor</name>
     <description>Don't touch the trapdoors.</description>
     <url>https://github.com/${github.repo}</url>
