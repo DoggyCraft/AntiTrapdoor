@@ -3,13 +3,13 @@
 
     <groupId>dk.DoggyCraft</groupId>
     <artifactId>antitrapdoor</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>AntiTrapdoor</name>
     <description>Don't touch the trapdoors.</description>
     <url>https://github.com/${github.repo}</url>
 
     <properties>
-        <github.repo>DoggyCraft/AntiTrapdoors</github.repo>
+        <github.repo>DoggyCraft/AntiTrapdoor</github.repo>
         <bukkitAPIVersion>1.18.1-R0.1-SNAPSHOT</bukkitAPIVersion>
         <jdk.version>17</jdk.version>
         <maven.compiler.source>${jdk.version}</maven.compiler.source>
